@@ -1,0 +1,71 @@
+console.log("Hello. welcome to Foodie.");
+console.log("To proceed, first, you need to create an account");
+var user = prompt("Enter your email");
+var pass = prompt("Create a strong password");
+console.log("You have successfully created your Foodie account");
+
+console.log("Log into your Foodie account to interact with your dashboard and order your favorite meal");
+
+var login = prompt("Username");
+var key = prompt("Password");
+
+while(login != user && key != pass){
+    console.log("Username or Password incorrect. Please try again");
+    var login = prompt("Enter the correct Username");
+    var key = prompt("Enter the correct password");
+}
+
+console.log("Login Successful.");
+var bal = 10;
+console.log("You have a balance of $" + bal + " in your Foodie wallet");
+var A1 = prompt("Would you like to top up your Foodie wallet?");
+
+if (A1=="Yes"){
+    var A2 = prompt("How much would you like to add to your wallet?");
+    A2 = parseInt(A2);
+    var NB = bal + A2;
+    console.log("You have added $" + A2 + " to your Foodie wallet and your neew balance is $" + NB);
+}
+
+else if (A1=="No"){
+    console.log("Great. Explore our menu to select one of our sumptuous meals");
+}
+
+var B1 = prompt("Would you like to order a burger?");
+
+if (B1=="Yes"){
+    console.log("We have a variety you can choose from. Please check and place an order for what you'd like");
+    var types = ["Cheese Burger","Steak Burger","Vegetable Burger","Beef Burger"];
+    var cost = [4.99, 3.49, 4.49, 6.99];
+
+        console.log("Option 1: " + types[0] + "  ---  $" + cost[0]);
+        console.log("Option 2: " + types[1] + "  ---  $" + cost[1]);
+        console.log("Option 3: " + types[2] + "  ---  $" + cost[2]);
+        console.log("Option 4: " + types[3] + "  ---  $" + cost[3]);
+
+    var B2 = prompt("Which of our Burger options would you like to get?");
+
+    if (B2=="Option 1"){
+        var Bal1 = NB - cost[0];
+        console.log("You have ordered " + types[0] + " for $" + cost[0] + " and your balance is $" + Bal1);
+    }
+
+    else if (B2=="Option 2"){
+        var Bal2 = NB - cost[1];
+        console.log("You have ordered " + types[1] + " for $" + cost[1] + " and your balance is $" + Bal2);
+    }
+
+    else if (B2=="Option 3"){
+        var Bal3 = NB - cost[2];
+        console.log("You have ordered " + types[2] + " for $" + cost[2] + " and your balance is $" + Bal3);
+    }
+
+    else if (B2=="Option 4"){
+        var Bal4 = NB - cost[3];
+        console.log("You have ordered " + types[3] + " for $" + cost[3] + " and your balance is $" + Bal4);
+    }
+}
+
+else if (B1=="No"){
+    console.log("Great. Explore our menu to order something delicious for you");
+}
